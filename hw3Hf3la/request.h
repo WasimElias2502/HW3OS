@@ -7,6 +7,7 @@ typedef struct Threads_stats{
     int total_req;
 } * threads_stats;
 
-void requestHandle(int fd , threads_stats myStats);
+void requestHandle(int fd ,struct timeval arrival , struct timeval dispatch, threads_stats myStats);
+
 
 #endif

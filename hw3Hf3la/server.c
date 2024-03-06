@@ -140,7 +140,7 @@ void* service(void* arg){
             pthread_mutex_unlock(&lock);
 
             ///////////// Handling the request
-            requestHandle(connfd , myThread);
+            requestHandle(connfd ,getArrival(waitToBusy), getDispatch(waitToBusy) ,myThread);
 
             ////// Removing from busy queue
             pthread_mutex_lock(&lock);

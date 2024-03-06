@@ -25,20 +25,6 @@ struct Queue{
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////// Request Function ////////////////////////////////////
 
 p_Request createRequest(int connfdSet , struct timeval arrivalSet){
@@ -83,7 +69,14 @@ int getConnfd(RequestNode myNode){
     return myNode->webRequest->connfd;
 }
 
-
+struct timeval getArrival(RequestNode mynode){
+    if(mynode == NULL || mynode->webRequest == NULL) return 0;
+    return mynode->webRequest->arrival;
+}
+struct timeval getDispatch(RequestNode mynode){
+    if(mynode == NULL || mynode->webRequest == NULL) return 0;
+    return mynode->webRequest->dispatch;
+}
 /////////////////////////////////// Queue Functions /////////////////////////////////////////
 
 RequestQueue createQueue(){

@@ -22,7 +22,8 @@ int getSizeQueue(RequestQueue myQueue);
 void dequeueByConnfd(RequestQueue myQueue , int connfd);
 int getConnfd(RequestNode myNode);
 void setDispatch(RequestNode mynode ,struct timeval dispatchTime);
-
+struct timeval getArrival(RequestNode mynode);
+struct timeval getDispatch(RequestNode mynode);
 
 
 
